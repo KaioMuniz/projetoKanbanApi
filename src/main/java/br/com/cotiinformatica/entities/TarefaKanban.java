@@ -3,15 +3,36 @@ package br.com.cotiinformatica.entities;
 import java.util.Date;
 import java.util.UUID;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 public class TarefaKanban {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private UUID id;
+	
+	@Column(name = "titulo", nullable = false, length = 100)
 	private String titulo;
+	
+	@Column(name = "descricao", columnDefinition = "text", nullable = true, length = 500)
 	private String descricao;
+	
+	@Column(name = "responsavel", nullable = true, length = 100)
 	private String responsavel;
+	
+	@Column(name = "data_criacao", nullable = false)
 	private Date dataCriacao;
+	
+	@Column(name = "data_prevista_entrega", nullable = true)
 	private Date dataPrevistaEntrega;
+	
+	@Column(name = "iniciado", nullable = false)
 	private Boolean iniciado;
+	
+	@Column(name = "finalizado", nullable = false)
 	private Boolean finalizado;
 	
 	
@@ -30,7 +51,7 @@ public class TarefaKanban {
 		this.dataPrevistaEntrega = dataPrevistaEntrega;
 		this.iniciado = iniciado;
 		this.finalizado = finalizado;
-		
+			
 	}
 	public UUID getId() {
 		return id;
