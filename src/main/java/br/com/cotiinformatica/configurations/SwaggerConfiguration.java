@@ -14,8 +14,8 @@ public class SwaggerConfiguration {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
             .info(new Info()
-                .title("API de Contatos")
+                .title("API de Kanban")
                 .version("v1.0")
-                .description("Documentação da API para gerenciamento de contatos."));
+                .description("Documentação da API para gerenciamento de tarefas."));
     }
 }
